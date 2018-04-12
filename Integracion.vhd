@@ -57,7 +57,7 @@ Inst_Program_Counter: Program_Counter PORT MAP(
 		output => s4
 	);
 Inst_Adder: Adder PORT MAP(
-		A => "00000000000000000000000000000100",
+		A => "00000000000000000000000000000001",
 		B => s4,
 		C => s1
 	);
