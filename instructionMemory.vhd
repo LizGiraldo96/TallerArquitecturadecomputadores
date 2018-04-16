@@ -28,7 +28,7 @@ impure function prueba(p : in string) return rom_type is
         return ROM;                                                  
      end function;                                                
  
-signal ROM : rom_type := prueba("codigoTXT.data.txt");
+signal ROM : rom_type := prueba("codigo.data");
 	
 begin
 	process(reset,address,ROM)

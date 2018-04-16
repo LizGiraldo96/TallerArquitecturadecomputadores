@@ -149,5 +149,6 @@ Inst_ALU: ALU PORT MAP(
 		Result => ALUout
 	);
 
+ALUresult <= Aluout;
 end Behavioral;
 
