@@ -9,13 +9,16 @@ end DATAPATH;
 
 architecture Behavioral of DATAPATH is
 
-component Program_Counter
-	Port ( clock : in  STD_LOGIC;
-           reset : in  STD_LOGIC;
-           input : in  STD_LOGIC_VECTOR (31 downto 0);
-           output : out  STD_LOGIC_VECTOR (31 downto 0)
-			 );
-end component;
+	COMPONENT Program_Counter
+	PORT(
+		clock : IN std_logic;
+		reset : IN std_logic;
+		input : IN std_logic_vector(31 downto 0);          
+		output : OUT std_logic_vector(31 downto 0)
+		);
+	END COMPONENT;
+
+
 
 component ALU
 	Port ( CRS1 : in  STD_LOGIC_VECTOR (31 downto 0);
@@ -129,7 +132,7 @@ Inst_Register_File: Register_File PORT MAP(
 		CRS1 => RFCRS1,
 		CRS2 => RFCRS2
 	);
-
+ 
 Inst_SING_EXTENSION: SING_EXTENSION PORT MAP(
 		imm13 => IMout (12 downto 0),
 		OUTput => SINGout

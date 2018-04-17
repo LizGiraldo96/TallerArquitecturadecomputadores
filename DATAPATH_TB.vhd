@@ -1,12 +1,12 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
- 
 ENTITY DATAPATH_TB IS
 END DATAPATH_TB;
  
 ARCHITECTURE behavior OF DATAPATH_TB IS 
-   
+ 
+    -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT DATAPATH
     PORT(
@@ -36,30 +36,29 @@ BEGIN
           ALUresult => ALUresult
         );
 
+   -- Clock process definitions
+   clk_process :process
+   begin
+		clk <= '0';
+		wait for clk_period/2;
+		clk <= '1';
+		wait for clk_period/2;
+   end process;
+ 
+
    -- Stimulus process
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.	
-		reset <= '0';
-      wait for 100 ns;	
 		reset <= '1';
-      wait for 100 ns;	
-		reset <= '0';	
+		
+		wait for 100 ns;	
+		
 		reset <= '0';
-      wait for 100 ns;	
-		reset <= '1';
-      wait for 100 ns;	
-		reset <= '0';	
-		reset <= '0';
-      wait for 100 ns;	
-		reset <= '1';
-      wait for 100 ns;	
-		reset <= '0';	
-		reset <= '0';
-      wait for 100 ns;	
-		reset <= '1';
-      wait for 100 ns;	
-		reset <= '0';
-   end process;
+		
+		wait for 100 ns;
+		
+		wait;
+	end process;
 
 END;
