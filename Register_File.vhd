@@ -4,9 +4,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL; --los vectores estan en representacion binaria pura
 
 entity Register_File is
-    Port ( RS1 : in  STD_LOGIC_VECTOR (4 downto 0);
-           RS2 : in  STD_LOGIC_VECTOR (4 downto 0);
-           RD : in  STD_LOGIC_VECTOR (4 downto 0);
+    Port ( nRS1 : in  STD_LOGIC_VECTOR (5 downto 0);
+           nRS2 : in  STD_LOGIC_VECTOR (5 downto 0);
+           nRD : in  STD_LOGIC_VECTOR (5 downto 0);
            DWR : in  STD_LOGIC_VECTOR (31 downto 0);
            reset : in  STD_LOGIC;
            CRS1 : out  STD_LOGIC_VECTOR (31 downto 0);
@@ -19,7 +19,7 @@ signal RAM:ram_type:=(others=>x"00000000"); --le asigno a la señal el valor de c
 
 begin
 
-process(RAM,RS1,RS2,RD,DWR,reset)
+process(RAM,nRS1,nRS2,nRD,DWR,reset)
 
 begin
 
@@ -28,11 +28,11 @@ if (reset='1') then
    CRS1<=(others=>'0');
 	CRS2<=(others=>'0');
 else 
-   CRS1<= RAM(conv_integer(RS1));-- señal que utilizo debo convertir a entero e indexo
-	CRS2<= RAM(conv_integer(RS2));
+   CRS1<= RAM(conv_integer(nRS1));-- señal que utilizo debo convertir a entero e indexo
+	CRS2<= RAM(conv_integer(nRS2));
 	--Esta condicion se hace para escribir en rd
-	if(RD /="00000")then
-	   RAM(conv_integer(RD))<=DWR; -- escribo cuando rd es diferente de cero
+	if(nRD /="00000")then
+	   RAM(conv_integer(nRD))<=DWR; -- escribo cuando rd es diferente de cero
 	end if;
 end if;
 
