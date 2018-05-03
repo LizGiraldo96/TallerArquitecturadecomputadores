@@ -1,0 +1,3 @@
+check: adder, IM,PC,PSR,PSRmodifier,SEU,register file,
+
+falta, UC para SAVE y RESTORE, ALU para las mismas dos y el Windows manager
