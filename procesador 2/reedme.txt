@@ -1,3 +1,3 @@
 check: adder, IM,PC,PSR,PSRmodifier,SEU,register file, UC
 
-falta, ALU para las mismas dos y el Windows manager
+falta el Windows manager
