@@ -59,10 +59,13 @@ begin
 			result <= CRS1 xnor CRS2;
 		when ("010011") =>          --XNORcc
 			result <= CRS1 xnor CRS2;
+		when ("010100") =>          --SAVE
+			result <= CRS1 + CRS2;
+		when ("010101") =>          --RESTORE
+			result <= CRS1 + CRS2;
 		when others => result <= "00000000000000000000000000000000";
 	end case;
 end process;
 
 
 end Behavioral;
-
