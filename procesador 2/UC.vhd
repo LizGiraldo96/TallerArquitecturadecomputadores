@@ -1,4 +1,3 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -83,6 +82,12 @@ when "10" => -- Cuando valga 10 debe tener en cuenta las condiciones
 				if(op3="010111") then--XNORcc
 					Result<="010011";
 				end if;
+				if(op3="111100") then--SAVE
+					Result<="010100";
+				end if;
+				if(op3="111101") then--RESTORE
+					Result<="010101";
+				end if;
 			when others => 
 		   Result <= "111111";
 		end case;
@@ -91,4 +96,3 @@ when "10" => -- Cuando valga 10 debe tener en cuenta las condiciones
 
 
 end ARQ_UC;
-
