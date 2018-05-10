@@ -1,0 +1,37 @@
+ld [address], regrd
+st regrd, [address]
+
+el store es la unica instruccion que usa el registro destino como registro fuente
+
+address = regrs1 + regrs2
+	  regrs1 + SEU(imm13)
+
+
+
+en el ultimo mux cuando hay un load dejo pasar lo de DM, si no dejo pasar lo del ALU
+
+
+el WRENMEM es cuando hay escritura en la memoria de datos por el STORE, tambien evita escritura e el RF si hay STORE
+
+OP3 del load es el mismo de la SUMA
+
+
+
+en los branch la dirección de salto es simplemente modificar el PC (program counter) y es de la siguiente manera:
+
+PC <- PC + 1*SEU(disp22)
+
+
+CALL
+
+%07 <- PC
+0PC <- PC + SEU(disp30)
+
+Jump and link
+
+jmpl regrs1, regrs2, regrd
+hmpl regrs1, imm, regrd
+
+rd <- PC
+address <- regrs1 + regrs2
+	   regrs1 + SEU(imm13)
