@@ -21,3 +21,5 @@
 --XORcc  	"010001"
 
 --XNORcc  	"010011"
+
+--instrucciones
