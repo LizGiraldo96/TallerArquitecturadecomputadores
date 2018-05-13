@@ -35,7 +35,7 @@ begin
 	begin
 		if(reset = '1') then
 			outInstruction <= (others => '0');
-			ROM <= (others => X"00000000");
+			
 		else
 			outInstruction <= to_stdlogicvector(ROM(conv_integer(address(5 downto 0))));
 		end if;
