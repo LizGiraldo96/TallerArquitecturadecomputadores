@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -o "C:/Users/Liz/Desktop/para liz/datapath/datapath_tb_isim_beh.exe" -prj "C:/Users/Liz/Desktop/para liz/datapath/datapath_tb_beh.prj" "work.datapath_tb" 
