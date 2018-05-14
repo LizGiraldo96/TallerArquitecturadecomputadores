@@ -7,7 +7,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity First_part is
     Port ( CLK : in  STD_LOGIC;
            Reset : in  STD_LOGIC;
-           Out_Program_counter : out  STD_LOGIC_VECTOR (5 downto 0));
+           Out_Program_counter : out  STD_LOGIC_VECTOR (31 downto 0));
 end First_part;
 
 architecture ARQ_First_Part of First_part is
@@ -31,11 +31,11 @@ COMPONENT Program_Counter
 
 
 
-signal  Radder, Rpc, Rnpc  : STD_LOGIC_VECTOR(31 downto 0);-- asigno señales de 32 bits para luego ser usadas
+signal  Radder, Rpc, Rnpc  : STD_LOGIC_VECTOR(31 downto 0);-- asigno seÃ±ales de 32 bits para luego ser usadas
 
 begin
 
-Out_Program_counter  <= Rpc(5 downto 0);--asigno a la nueva señal RPC el valor de out_Program_counter
+Out_Program_counter  <= Rpc(31 downto 0);--asigno a la nueva seÃ±al RPC el valor de out_Program_counter
 
 
 
