@@ -14,7 +14,7 @@ ARCHITECTURE behavior OF First_partTB IS
     PORT(
          CLK : IN  std_logic;
          Reset : IN  std_logic;
-         Out_Program_counter : OUT  std_logic_vector(5 downto 0)
+         Out_Program_counter : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
@@ -24,7 +24,7 @@ ARCHITECTURE behavior OF First_partTB IS
    signal Reset : std_logic := '0';
 
  	--Outputs
-   signal Out_Program_counter : std_logic_vector(5 downto 0);
+   signal Out_Program_counter : std_logic_vector(31 downto 0);
 
    -- Clock period definitions
    constant CLK_period : time := 10 ns;
