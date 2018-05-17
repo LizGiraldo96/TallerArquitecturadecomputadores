@@ -28,14 +28,14 @@ impure function prueba(p : in string) return rom_type is
         return ROM;                                                  
      end function;                                                
  
-signal ROM : rom_type := prueba("codigoTXT.data.txt");
+signal ROM : rom_type := prueba("codigo.data");
 	
 begin
 	process(reset,address,ROM)
 	begin
 		if(reset = '1') then
 			outInstruction <= (others => '0');
-			ROM <= (others => X"00000000");
+			
 		else
 			outInstruction <= to_stdlogicvector(ROM(conv_integer(address(5 downto 0))));
 		end if;

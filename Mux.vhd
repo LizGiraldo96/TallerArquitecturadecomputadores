@@ -1,8 +1,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
-
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
 
 entity Mux is
     Port ( i : in  STD_LOGIC;
@@ -19,8 +19,10 @@ begin
 process(i,Registro,Imm)
 begin
 	if(i='1') then
-		salida <= Imm;
+	   salida <= Imm;
+		
 	else
+		
 		salida <= Registro;
 	end if;
 
